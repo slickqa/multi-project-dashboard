@@ -4452,9 +4452,6 @@ a.result-status-total a.result-status-total:visited {
 .multi-project-dashboard-table-row {
   border: 1px solid white;
 }
-.multi-project-dashboard-table-row:nth-child(even) {
-  background-color: #222222;
-}
 .multi-project-dashboard-table-row td {
   padding-top: .125in;
   padding-bottom: .125in;
@@ -4523,6 +4520,9 @@ a.result-status-total a.result-status-total:visited {
 div.multi-project-dashboard-statusbar {
   width: 1.8in;
 }
+.multi-project-dashboard-even-row {
+  background-color: #222222;
+}
 .statusbar {
   width: 1in;
   padding: 0;
@@ -4548,4 +4548,130 @@ div.multi-project-dashboard-statusbar {
 }
 .statusbar-FAIL {
   background-color: #ff0000;
+}
+.releases-list-container {
+  width: 8in;
+  margin-left: auto;
+  margin-right: auto;
+}
+.releases-list-column-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  width: 100%;
+}
+.releases-list-name-column {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -moz-box-flex: 1;
+  -moz-flex-grow: 1;
+  -ms-flex: 1;
+  flex-grow: 1;
+  padding-left: .1in;
+}
+.releases-list-target-column {
+  -webkit-flex-grow: 0;
+  -webkit-box-flex: 0;
+  -moz-flex-grow: 0;
+  -moz-box-flex: 0;
+  -ms-flex-grow: 0;
+  -ms-box-flex: 0;
+  flex-grow: 0;
+  width: 1.5in;
+  padding-left: .1in;
+}
+.releases-list-default-column {
+  width: 1in;
+  padding-left: .1in;
+}
+.releases-list-active-column {
+  width: 1in;
+  padding-left: .1in;
+}
+.releases-list-row {
+  padding-top: .05in;
+  padding-bottom: .05in;
+}
+.releases-list-row.ng-enter {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeInRightBig;
+  -moz-animation-name: fadeInRightBig;
+  -o-animation-name: fadeInRightBig;
+  animation-name: fadeInRightBig;
+}
+.releases-list-row.ng-leave {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeOutRightBig;
+  -moz-animation-name: fadeOutRightBig;
+  -o-animation-name: fadeOutRightBig;
+  animation-name: fadeOutRightBig;
+}
+.releases-list-row:nth-child(even) {
+  background: #222222;
+}
+.releases-list-row:last-child {
+  border-bottom: none;
+}
+.releases-form-save-button.ng-hide-add {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: bounceOutLeft;
+  -moz-animation-name: bounceOutLeft;
+  -o-animation-name: bounceOutLeft;
+  animation-name: bounceOutLeft;
+}
+.releases-form-save-button.ng-hide-remove {
+  display: inline-block !important;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: bounceInLeft;
+  -moz-animation-name: bounceInLeft;
+  -o-animation-name: bounceInLeft;
+  animation-name: bounceInLeft;
+}
+.slick-date-picker {
+  position: relative;
+}
+.slick-date-picker-transclude {
+  cursor: pointer;
+}
+.slick-date-picker-transclude:hover {
+  -webkit-box-shadow: #fff 0 0 .15in;
+  -moz-box-shadow: #fff 0 0 .15in;
+  -ms-box-shadow: #fff 0 0 .15in;
+  box-shadow: #fff 0 0 .15in;
+}
+.slick-date-picker-calendar {
+  position: absolute;
+  z-index: 1;
 }

@@ -14,11 +14,20 @@ angular.module("DashboardApp")
                 project.totalRows = project.totalRows + version.testruns.length;
             });
         });
+        var even = true;
+        var extracss = "";
         _.each(DashboardConfig.projects, function(project) {
             var projCellDone = false;
             _.each(project.versions, function(version){
                 var verCellDone = false;
                 _.each(version.testruns, function(testrun) {
+                    even = !even;
+                    if(even) {
+                        extracss = " multi-project-dashboard-even-row";
+                    } else {
+                        extracss = ""
+                    }
+
                     var row = [];
                     if (!projCellDone) {
                         row.push({
@@ -38,28 +47,29 @@ angular.module("DashboardApp")
                     }
                     row.push({
                         rowspan: 0,
-                        css: "multi-project-dashboard-testrun-label",
+                        css: "multi-project-dashboard-testrun-label" + extracss,
                         content: testrun.name
                     });
                     testrun.data = {};
                     testrun.data.build = {
                         rowspan: 0,
-                        css: "multi-project-dashboard-build-cell",
+                        css: "multi-project-dashboard-build-cell" + extracss,
                         content: " "
                     };
                     testrun.data.date = {
                         rowspan: 0,
-                        css: "multi-project-dashboard-date-cell",
+                        css: "multi-project-dashboard-date-cell" + extracss,
                         content: " "
                     };
                     testrun.data.statusbar = {
                         rowspan: 0,
-                        css: "multi-project-dashboard-statusbar-cell",
+                        css: "multi-project-dashboard-statusbar-cell" + extracss,
                         content: " "
                     };
                     testrun.data.stats = {
                         rowspan: 0,
-                        css: "multi-project-dashboard-stats-cell",
+                        css: "multi-project-dashboard-stats-cell" + extracss,
+                        originalcss: "multi-project-dashboard-stats-cell" + extracss,
                         content: " ",
                         oldcontent: ""
 
@@ -90,7 +100,7 @@ angular.module("DashboardApp")
                                 if(testrun.data.stats.css.indexOf("animate-change") == -1) {
                                     testrun.data.stats.css = testrun.data.stats.css + " animate-change";
                                 } else {
-                                    testrun.data.stats.css = "multi-project-dashboard-stats-cell";
+                                    testrun.data.stats.css = testrun.data.stats.originalcss;
                                 }
                             }
                             testrun.data.stats.oldcontent = testrun.data.stats.content;
